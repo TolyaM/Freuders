@@ -1,7 +1,6 @@
-using Freuders.Domain.Restaurant.Table;
 using Freuders.Infrastructure;
 
-namespace Freuders.Domain.Restaurant.Leave;
+namespace Freuders.Domain.Restaurant.Table.Leave;
 
 public class Command : CommandExecutable<Request, Response>
 {

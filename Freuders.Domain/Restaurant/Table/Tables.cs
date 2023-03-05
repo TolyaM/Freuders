@@ -1,14 +1,13 @@
 using System.Collections;
-using System.Collections.Concurrent;
 
 namespace Freuders.Domain.Restaurant.Table;
 
 public class Tables : IEnumerable<Table>
 {
-    private readonly ConcurrentBag<Table> _tables;
+    private readonly IReadOnlyCollection<Table> _tables;
 
     public Tables(IEnumerable<Table> tables) =>
-        _tables = new ConcurrentBag<Table>(tables);
+        _tables = new List<Table>(tables);
 
     public IEnumerable<Table> EmptyTables(int clientsCount) =>
         _tables.Where(table => table.IsEmpty() && table.NumberOfPlaces >= clientsCount);

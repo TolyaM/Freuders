@@ -28,11 +28,11 @@ public class Restaurant : IRestaurant
         }
     }
 
-    public Leave.Response Leave(Leave.Request request)
+    public Table.Leave.Response Leave(Table.Leave.Request request)
     {
         lock (_lockerLeave)
         {
-            var response = new Leave.Command(_tables).Handle(request);
+            var response = new Table.Leave.Command(_tables).Handle(request);
 
             if (response.Table is null)
             {

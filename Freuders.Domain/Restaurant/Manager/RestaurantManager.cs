@@ -1,5 +1,5 @@
 using Freuders.Domain.Restaurant.Client;
-using Freuders.Domain.Restaurant.Leave;
+using Freuders.Domain.Restaurant.Table.Leave;
 
 namespace Freuders.Domain.Restaurant.Manager;
 
