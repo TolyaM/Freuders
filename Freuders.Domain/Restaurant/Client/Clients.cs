@@ -2,18 +2,11 @@ namespace Freuders.Domain.Restaurant.Client;
 
 public class Clients : IEquatable<Clients>
 {
-    public Clients(int count)
-    {
-        Count = count;
-    }
+    public Clients(int count) => Count = count;
 
     public Guid Id { get; } = Guid.NewGuid();
 
     public int Count { get; }
-
-    public bool IsRemoved { get; private set; }
-
-    public void Remove() => IsRemoved = true;
 
     public bool Equals(Clients? other)
     {

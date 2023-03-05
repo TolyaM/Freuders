@@ -1,7 +1,7 @@
-using Freuders.Domain.Restaurant.Client;
+using Freuders.Domain.Restaurant.Table;
 using Freuders.Infrastructure;
 
-namespace Freuders.Domain.Restaurant.Table.Leave;
+namespace Freuders.Domain.Restaurant.Leave;
 
 public class Command : CommandExecutable<Request, Response>
 {
@@ -11,9 +11,9 @@ public class Command : CommandExecutable<Request, Response>
 
     protected override Response Execute(Request request)
     {
-        var table = _tables.FirstOrDefault(table => table.Clients.ContainsKey(request.Clients));
+        var table = _tables.FirstOrDefault(table => table.Clients.Contains(request.Clients));
 
-        table?.Clients.TryRemove(new KeyValuePair<Clients, byte>(request.Clients, default));
+        table?.Clients.Remove(request.Clients);
 
         return new Response(table);
     }

@@ -1,19 +1,16 @@
 using System.Collections;
-using System.Collections.Concurrent;
 
 namespace Freuders.Domain.Restaurant.Client;
 
 public class ClientsQueue : IEnumerable<Clients>
 {
-    private readonly ConcurrentQueue<Clients> _clientsQueue = new();
+    private readonly LinkedList<Clients> _clientsQueue = new();
 
-    public void Add(Clients clients) => _clientsQueue.Enqueue(clients);
+    public void Add(Clients clients) => _clientsQueue.AddLast(clients);
 
-    public void Remove(Clients clients) => clients.Remove();
+    public void Remove(Clients clients) => _clientsQueue.Remove(clients);
 
-    public IEnumerator<Clients> GetEnumerator() => _clientsQueue
-        .Where(client => !client.IsRemoved)
-        .GetEnumerator();
+    public IEnumerator<Clients> GetEnumerator() => _clientsQueue.GetEnumerator();
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 }
