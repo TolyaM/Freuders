@@ -10,11 +10,6 @@ public class Command : CommandExecutable<Request, Response>
 
     protected override Response Execute(Request request)
     {
-        if (_tables.Exists(request.Clients))
-        {
-            return new Response(default);
-        }
-
         var table = _tables
             .EmptyTables(request.Clients.Count)
             .MinBy(table => table.NumberOfPlaces);
@@ -25,11 +20,11 @@ public class Command : CommandExecutable<Request, Response>
                 .SharedTables(request.Clients.Count)
                 .MinBy(x =>
                     x.NumberOfPlaces -
-                    x.Clients.Keys.Sum(client => client.Count) -
+                    x.Clients.Sum(client => client.Count) -
                     request.Clients.Count);
         }
 
-        table?.Clients.TryAdd(request.Clients, default);
+        table?.Clients.Add(request.Clients);
 
         return new Response(table);
     }

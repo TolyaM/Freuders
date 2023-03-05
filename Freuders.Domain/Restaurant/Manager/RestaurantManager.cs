@@ -1,4 +1,5 @@
 using Freuders.Domain.Restaurant.Client;
+using Freuders.Domain.Restaurant.Leave;
 
 namespace Freuders.Domain.Restaurant.Manager;
 
@@ -10,7 +11,7 @@ public class RestaurantManager : IRestaurantManager
 
     public void OnArrive(Clients clients) => _restaurant.BookTable(new Table.Book.Request(clients));
 
-    public void OnLeave(Clients clients) => _restaurant.LeaveTable(new Table.Leave.Request(clients));
+    public void OnLeave(Clients clients) => _restaurant.Leave(new Request(clients));
 
     public Table.Table? Lookup(Clients clients) => _restaurant.LookupTable(new Table.Lookup.Request(clients)).Table;
 }

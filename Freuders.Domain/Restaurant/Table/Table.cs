@@ -1,4 +1,3 @@
-using System.Collections.Concurrent;
 using Freuders.Domain.Restaurant.Client;
 
 namespace Freuders.Domain.Restaurant.Table;
@@ -11,9 +10,9 @@ public class Table : IEquatable<Table>
 
     public int NumberOfPlaces { get; }
 
-    public readonly ConcurrentDictionary<Clients, byte> Clients = new();
+    public readonly List<Clients> Clients = new();
 
-    public bool IsEmpty() => Clients.IsEmpty;
+    public bool IsEmpty() => Clients.Count == 0;
 
     public bool IncompleteLanding() => NumberOfPlaces - Clients.Count > 0;
 
