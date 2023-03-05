@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freuders.Api", "Freuders.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freuders.Domain", "Freuders.Domain\Freuders.Domain.csproj", "{F39023A6-9F22-4BBE-A1EA-6EAAF7FB885B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freuders.Infrastructure", "Freuders.Infrastructure\Freuders.Infrastructure.csproj", "{6FA93EB3-47D7-4607-B105-8238F206707A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{F39023A6-9F22-4BBE-A1EA-6EAAF7FB885B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F39023A6-9F22-4BBE-A1EA-6EAAF7FB885B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F39023A6-9F22-4BBE-A1EA-6EAAF7FB885B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA93EB3-47D7-4607-B105-8238F206707A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA93EB3-47D7-4607-B105-8238F206707A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA93EB3-47D7-4607-B105-8238F206707A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA93EB3-47D7-4607-B105-8238F206707A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
