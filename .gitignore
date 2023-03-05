@@ -1,0 +1,24 @@
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+.vs/
+.vscode/
+bin
+obj
+*/bin/*
+*/obj/*
+.idea/
+ 
+# ============ #
+# OS generated #
+# ============ #
+*.csproj.user
+*.sfproj.user
+
+# ReSharper is a .NET coding add-in
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# DotCover is a Code Coverage Tool
+*.dotCover
