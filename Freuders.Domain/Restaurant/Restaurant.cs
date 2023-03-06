@@ -40,7 +40,7 @@ public class Restaurant : IRestaurant
             }
             else
             {
-                var elementsToRemove = new List<Clients>();
+                var clientsToRemove = new List<Clients>();
                 foreach (var clients in _clientsQueue)
                 {
                     if(BoardingImpossible(response.Table!, clients.Count))
@@ -49,10 +49,10 @@ public class Restaurant : IRestaurant
                     }
 
                     response.Table.Clients.Add(clients);
-                    elementsToRemove.Add(clients);
+                    clientsToRemove.Add(clients);
                 }
 
-                foreach (var clients in elementsToRemove)
+                foreach (var clients in clientsToRemove)
                 {
                     _clientsQueue.Remove(clients);
                 }
